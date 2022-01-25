@@ -1,8 +1,26 @@
+:root {
+  --color-T: hsl(0, 100%, 50%);
+  --color-L: hsl(49, 76%, 49%);
+  --color-J: hsl(27, 93%, 49%);
+  --color-I: hsl(143, 84%, 27%);
+  --color-O: hsl(251, 89%, 40%);
+  --color-S: hsl(300, 100%, 50%);
+  --color-Z: hsl(266, 97%, 44%);
+
+  --color-board: hsl(0, 0%, 18%);
+  --color-grid: hsl(0, 0%, 31%);
+
+  --board-width: 10;
+  --board-height: 27;
+}
+
+html,
 body {
+  font-size: 20px;
+}
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }

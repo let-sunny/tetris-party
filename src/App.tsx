@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import Piece from './components/piece/Piece';
 
 function App() {
   useEffect(() => {
@@ -12,7 +11,6 @@ function App() {
   return (
     <div className="App">
       <h1>Hello</h1>
-      <Piece />
       <button
         onClick={() => {
           parent?.postMessage?.({ pluginMessage: 'close' }, '*');

@@ -1,0 +1,41 @@
+.cell {
+  border-radius: 0.2rem;
+  border-width: 0.2rem;
+  border-style: outset;
+
+  width: 1rem;
+  height: 1rem;
+}
+
+.NONE {
+  background-color: transparent;
+  border: none;
+}
+.T {
+  background-color: var(--color-T);
+  border-color: var(--color-T);
+}
+.L {
+  background-color: var(--color-L);
+  border-color: var(--color-L);
+}
+.J {
+  background-color: var(--color-J);
+  border-color: var(--color-J);
+}
+.I {
+  background-color: var(--color-I);
+  border-color: var(--color-I);
+}
+.O {
+  background-color: var(--color-O);
+  border-color: var(--color-O);
+}
+.S {
+  background-color: var(--color-S);
+  border-color: var(--color-S);
+}
+.Z {
+  background-color: var(--color-Z);
+  border-color: var(--color-Z);
+}
