@@ -13,9 +13,13 @@ const Template: ComponentStory<typeof Board> = (args) => <Board {...args} />;
 
 export const base = Template.bind({});
 base.args = {
-  grid: new Array(BOARD_HEIGHT).fill(0).map(() =>
-    new Array(BOARD_WIDTH).fill(0).map(() => ({
-      type: 'NONE',
-    }))
-  ),
+  grid: Array(BOARD_HEIGHT)
+    .fill(0)
+    .map(() =>
+      Array(BOARD_WIDTH)
+        .fill(0)
+        .map(() => ({
+          type: 'NONE',
+        }))
+    ),
 };

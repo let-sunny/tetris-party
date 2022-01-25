@@ -12,17 +12,17 @@ type Props = {
 };
 
 const Board = ({ grid }: Props) => {
-  const stage = useMemo(() => {
-    return grid.map((row, x) =>
-      row.map(({ type }, y) => (
-        <div className={classes.cellContainer}>
-          <Cell type={type} key={`${type}_${x}-${y}`} />
-        </div>
-      ))
-    );
-  }, [grid]);
-
-  return <div className={classes.board}>{stage}</div>;
+  return (
+    <div className={classes.board}>
+      {grid.map((row, x) =>
+        row.map(({ type }, y) => (
+          <div className={classes.cellContainer}>
+            <Cell type={type} key={`${type}_${x}-${y}_${Date.now()}`} />
+          </div>
+        ))
+      )}
+    </div>
+  );
 };
 
 export default Board;
