@@ -1,6 +1,6 @@
 import { BOARD_HEIGHT, BOARD_WIDTH, Pieces } from './../util/constants';
 import { useEffect, useState } from 'react';
-import { Piece, usePiece } from './usePiece';
+import { Piece, usePiece, getRotatedShape } from './usePiece';
 import { useTimer } from './useTimer';
 
 type CellState = {
@@ -80,6 +80,7 @@ export const useBoard = () => {
       lock = false;
     };
     const keyHandler = (e: KeyboardEvent) => {
+      e.preventDefault();
       if (lock) return;
       lock = true;
 
@@ -98,21 +99,46 @@ export const useBoard = () => {
           if (!isCollusion(grid, currentPiece, toDown)) updatePosition(toDown);
           break;
         case 'ArrowUp':
-          let x = currentPiece.position.x;
-          let offset = x;
+          let rotatedShape = getRotatedShape(currentPiece.shape);
+          let rotatedPiece = { ...currentPiece, shape: rotatedShape };
+          let width = currentPiece.shape[0].length;
+          let left = currentPiece.position.x;
+          let right = left + width - 1;
 
-          while (isCollusion(grid, currentPiece, { x: offset - x, y: 0 })) {
-            if (x === offset) offset = 1;
-            x += offset;
-            offset = -(offset + (offset > 0 ? 1 : -1));
+          while (isCollusion(grid, rotatedPiece, { x: 0, y: 0 })) {
+            if (right < BOARD_WIDTH - 1) {
+              // reach the right edge
+              rotatedPiece = {
+                ...rotatedPiece,
+                position: {
+                  x: rotatedPiece.position.x + 1,
+                  y: rotatedPiece.position.y,
+                },
+              };
+            } else {
+              // reach the left edge
+              rotatedPiece = {
+                ...rotatedPiece,
+                position: {
+                  x: rotatedPiece.position.x - 1,
+                  y: rotatedPiece.position.y,
+                },
+              };
+            }
 
-            if (offset > currentPiece.shape[0].length) {
-              updatePosition({ x, y: 0 });
-              return;
+            if (
+              rotatedPiece.position.x > BOARD_WIDTH - 1 ||
+              rotatedPiece.position.x < 0
+            ) {
+              // collision with the other
+              break;
             }
           }
 
-          rotate();
+          rotate({
+            x: rotatedPiece.position.x - currentPiece.position.x,
+            y: 0,
+          });
           break;
         case 'Space':
           let y = currentPiece.position.y;
@@ -133,7 +159,7 @@ export const useBoard = () => {
       document.removeEventListener('keydown', keyHandler);
       document.addEventListener('keyup', keyLockHandler);
     };
-  }, [currentPiece]);
+  });
 
   return {
     grid,

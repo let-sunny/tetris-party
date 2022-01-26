@@ -25,10 +25,14 @@ export const usePiece = () => {
     });
   };
 
-  const rotate = () => {
+  const rotate = ({ x, y }: { x: number; y: number }) => {
     const { shape } = piece;
-    const newShape = shape.map((_, i) => shape.map((row) => row[i]).reverse());
-    setPiece({ ...piece, shape: newShape });
+    const newShape = getRotatedShape(shape);
+    setPiece({
+      ...piece,
+      shape: newShape,
+      position: { x: x + piece.position.x, y: y + piece.position.y },
+    });
   };
 
   const fix = () => {
@@ -59,4 +63,8 @@ const getPiece = () => {
     position: randomPosition,
     fixed: false,
   };
+};
+
+export const getRotatedShape = (shape: number[][]) => {
+  return shape.map((_, i) => shape.map((row) => row[i]).reverse());
 };
