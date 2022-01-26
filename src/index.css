@@ -1,11 +1,11 @@
 :root {
-  --color-T: hsl(0, 100%, 50%);
-  --color-L: hsl(49, 76%, 49%);
-  --color-J: hsl(27, 93%, 49%);
-  --color-I: hsl(143, 84%, 27%);
-  --color-O: hsl(251, 89%, 40%);
-  --color-S: hsl(300, 100%, 50%);
-  --color-Z: hsl(266, 97%, 44%);
+  --color-T: hsl(14, 100%, 53%);
+  --color-L: hsl(49, 100%, 49%);
+  --color-J: hsl(148, 100%, 36%);
+  --color-I: hsl(219, 100%, 69%);
+  --color-O: hsl(266, 100%, 64%);
+  --color-S: hsl(29, 100%, 50%);
+  --color-Z: hsl(315, 100%, 65%);
 
   --color-board: hsl(0, 0%, 18%);
   --color-grid: hsl(0, 0%, 31%);

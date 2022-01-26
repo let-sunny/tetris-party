@@ -12,5 +12,5 @@
 }
 
 .cellContainer {
-  border: 1px solid var(--color-grid);
+  border: 1px dotted var(--color-grid);
 }
