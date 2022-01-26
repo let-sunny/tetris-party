@@ -1,0 +1,16 @@
+.board {
+  background-color: var(--color-board);
+  border: outset;
+  border-width: 0.2rem;
+  border-radius: 0.2rem;
+  border-color: var(--color-board);
+
+  display: grid;
+  grid-template-columns: repeat(var(--board-width), 1rem);
+  grid-template-rows: repeat(var(--board-height), 1rem);
+  width: fit-content;
+}
+
+.cellContainer {
+  border: 1px dotted var(--color-grid);
+}

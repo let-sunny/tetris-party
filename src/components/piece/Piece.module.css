@@ -1,0 +1,17 @@
+.piece {
+  display: grid;
+  grid-auto-rows: 1rem;
+}
+
+.piece[data-colum='1'] {
+  grid-template-columns: repeat(1, 1rem);
+}
+.piece[data-colum='2'] {
+  grid-template-columns: repeat(2, 1rem);
+}
+.piece[data-colum='3'] {
+  grid-template-columns: repeat(3, 1rem);
+}
+.piece[data-colum='4'] {
+  grid-template-columns: repeat(4, 1rem);
+}

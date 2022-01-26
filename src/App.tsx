@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './App.css';
+import Game from './components/game/Game';
 
 function App() {
   useEffect(() => {
@@ -9,15 +9,8 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <h1>Hello</h1>
-      <button
-        onClick={() => {
-          parent?.postMessage?.({ pluginMessage: 'close' }, '*');
-        }}
-      >
-        Close
-      </button>
+    <div className="app">
+      <Game />
     </div>
   );
 }

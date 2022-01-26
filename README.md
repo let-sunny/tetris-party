@@ -21,5 +21,6 @@ npm run dev
 - React
 - [Vite](https://vitejs.dev/)
 - Jest
+- Storybook
 
 Template from [create-widget-app](https://github.com/figma/widget-samples/tree/main/create-widget-app)

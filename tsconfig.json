@@ -23,6 +23,6 @@
       "./node_modules/@types"
     ]
   },
-  "include": ["../ui-src/**/*", "../widget-src/**/*"],
+  "include": ["../src/**/*", "../widget/**/*", ".eslintrc.js"],
   "exclude": ["node_modules", "dist"]
 }
