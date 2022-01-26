@@ -1,9 +1,9 @@
 import React from 'react';
-import { Pieces } from '../../util/constants';
 import classes from './Cell.module.css';
+import { PieceType } from '../../hooks/usePiece';
 
 type Props = {
-  type: keyof typeof Pieces;
+  type: PieceType;
 };
 
 const Cell = ({ type }: Props) => {

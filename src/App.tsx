@@ -12,7 +12,6 @@ function App() {
   return (
     <div className="App">
       <Game />
-      <h1>Hello</h1>
       <button
         onClick={() => {
           parent?.postMessage?.({ pluginMessage: 'close' }, '*');

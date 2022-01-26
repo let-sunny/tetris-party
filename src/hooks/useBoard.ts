@@ -1,15 +1,22 @@
-import { BOARD_HEIGHT, BOARD_WIDTH, Pieces } from './../util/constants';
 import { useEffect, useState } from 'react';
-import { Piece, usePiece, getRotatedShape } from './usePiece';
+import { GameOverHandler, GameState } from './useGame';
+import { Piece, usePiece, getRotatedShape, PieceType } from './usePiece';
 import { useTimer } from './useTimer';
 
-type CellState = {
-  type: keyof typeof Pieces;
+export type CellState = {
+  type: PieceType;
   fixed: boolean;
 };
-const DELAY = 500;
+type BoardController = {
+  state: GameState;
+  gameOver: GameOverHandler;
+};
+
 export const useBoard = () => {
   const [grid, setGrid] = useState(getInitialGrid(BOARD_WIDTH, BOARD_HEIGHT));
+  const [boardController, setBoardController] =
+    useState<BoardController | null>(null);
+  const [delay, setDelay] = useState(500);
   const timer = useTimer();
   const {
     generatePiece,
@@ -20,23 +27,24 @@ export const useBoard = () => {
   } = usePiece();
 
   useEffect(() => {
-    timer.start(DELAY, () => {
-      const toDown = { x: 0, y: 1 };
-      if (!isCollusion(grid, currentPiece, toDown)) {
-        updatePosition(toDown);
-      } else if (isCollusion(grid, currentPiece, { x: 0, y: 0 })) {
-        // TODO:
-        alert('game over');
-        timer.stop();
-      } else {
-        fix();
-      }
-    });
+    if (boardController?.state === 'playing') {
+      timer.start(delay, () => {
+        const toDown = { x: 0, y: 1 };
+        if (!isCollusion(grid, currentPiece, toDown)) {
+          updatePosition(toDown);
+        } else if (isCollusion(grid, currentPiece, { x: 0, y: 0 })) {
+          timer.stop();
+          boardController?.gameOver();
+        } else {
+          fix();
+        }
+      });
+    }
 
     return () => {
       timer.stop();
     };
-  }, [currentPiece]);
+  }, [currentPiece, boardController, delay]);
 
   useEffect(() => {
     setGrid((prev) => {
@@ -66,6 +74,11 @@ export const useBoard = () => {
 
       if (fixed) {
         generatePiece();
+        setDelay((prev) => {
+          if (prev > 400) return prev - 15;
+          if (prev > 120) return prev - 20;
+          return prev;
+        });
         return removeRow(newGrid);
       }
 
@@ -75,15 +88,9 @@ export const useBoard = () => {
 
   // keydown event handler
   useEffect(() => {
-    let lock = false;
-    const keyLockHandler = (e: KeyboardEvent) => {
-      lock = false;
-    };
+    if (boardController?.state !== 'playing') return;
     const keyHandler = (e: KeyboardEvent) => {
       e.preventDefault();
-      if (lock) return;
-      lock = true;
-
       switch (e.code) {
         case 'ArrowLeft':
           const toLeft = { x: -1, y: 1 };
@@ -141,7 +148,7 @@ export const useBoard = () => {
           });
           break;
         case 'Space':
-          let y = currentPiece.position.y;
+          let y = 0;
           while (!isCollusion(grid, currentPiece, { x: 0, y })) {
             y += 1;
           }
@@ -153,19 +160,24 @@ export const useBoard = () => {
       }
     };
     document.addEventListener('keydown', keyHandler);
-    document.addEventListener('keyup', keyLockHandler);
 
     return () => {
       document.removeEventListener('keydown', keyHandler);
-      document.addEventListener('keyup', keyLockHandler);
     };
-  });
+  }, [currentPiece, boardController?.state]);
+
+  const setBoard = (boardController: BoardController) => {
+    setGrid(getInitialGrid(BOARD_WIDTH, BOARD_HEIGHT));
+    setBoardController(boardController);
+  };
 
   return {
     grid,
+    setBoard,
   };
 };
 
+// helper
 const createDefaultCellState = (): CellState => ({
   type: 'NONE',
   fixed: false,
@@ -219,3 +231,6 @@ const removeRow = (grid: CellState[][]) => {
   });
   return grid;
 };
+
+export const BOARD_WIDTH = 10;
+export const BOARD_HEIGHT = 27;

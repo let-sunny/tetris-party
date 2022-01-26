@@ -1,10 +1,10 @@
 import React from 'react';
 import classes from './Piece.module.css';
-import { Pieces } from '../../util/constants';
 import Cell from '../cell/Cell';
+import { PieceType } from '../../hooks/usePiece';
 
 type Props = {
-  type: keyof typeof Pieces;
+  type: PieceType;
   shape: number[][];
 };
 
