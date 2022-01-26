@@ -23,17 +23,22 @@ const Game = () => {
   }, [gameState]);
 
   const startButton = useMemo(() => {
-    if (gameState !== 'playing')
-      return <Button name="Start" onClick={startGame} />;
-    return null;
+    return gameState !== 'playing' ? (
+      <Button name="Start" onClick={startGame} />
+    ) : null;
   }, [gameState]);
 
+  const board = useMemo(() => {
+    return gameState === 'playing' ? <Board grid={currentGrid} /> : null;
+  }, [currentGrid, gameState]);
+
+  
+
   return (
-    <div>
-      <h1>Game</h1>
-      {gameState === 'playing' && <Board grid={currentGrid} />}
+    <>
+      {board}
       {startButton}
-    </div>
+    </>
   );
 };
 

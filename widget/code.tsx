@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 const { widget } = figma;
 const { useEffect, Text } = widget;
 
@@ -5,7 +6,7 @@ function Widget() {
   useEffect(() => {
     figma.ui.on('message', (msg) => {
       if (msg === 'hello') {
-        figma.notify(`Hello Widgets`);
+        // figma.notify(`Hello Widgets`);
       }
       if (msg === 'close') {
         figma.closePlugin();
@@ -21,12 +22,13 @@ function Widget() {
         // opened. Resolving the promise, closing the Iframe window, or calling
         // "figma.closePlugin()" will terminate the code.
         () =>
-          new Promise((resolve) => {
+          new Promise((_resolve) => {
             figma.showUI(__html__);
+            figma.ui.resize(300, 600);
           })
       }
     >
-      Open IFrame
+      Start Tetris
     </Text>
   );
 }
