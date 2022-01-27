@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import Piece from './Piece';
-import { Pieces } from '../../util/constants';
+import { PieceShapes } from '../../hooks/usePiece';
 
 export default {
   title: 'Components/Piece',
@@ -10,7 +10,7 @@ export default {
 } as ComponentMeta<typeof Piece>;
 
 const Template: ComponentStory<typeof Piece> = (args) => (
-  <Piece {...{ ...args, shape: Pieces[args.type] }} />
+  <Piece {...{ ...args, shape: PieceShapes[args.type] }} />
 );
 
 export const NONE = Template.bind({});

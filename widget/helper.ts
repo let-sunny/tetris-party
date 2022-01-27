@@ -1,12 +1,13 @@
-import { Player } from './type';
+import { Player } from '../type';
 
 export const buildPlayer = (currentUser: User): Player => ({
-  stage: 'ready',
+  state: 'idle',
   score: 0,
   rank: 0,
   name: currentUser!.name,
   photoUrl: currentUser!.photoUrl || '',
   id: currentUser!.id || '',
+  board: [],
 });
 
 export const GRADIENT_FILL: WidgetJSX.GradientPaint = {

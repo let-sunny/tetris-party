@@ -5,17 +5,19 @@ export type GameState = 'idle' | 'playing' | 'over';
 export type GameOverHandler = () => void;
 
 export const useGame = () => {
-  const [gameState, setGameState] = useState<GameState>('idle');
+  const [state, setState] = useState<GameState>('idle');
+
   const gameOver = () => {
-    setGameState('over');
+    setState('over');
   };
 
-  const startGame = () => {
-    setGameState('playing');
+  const start = () => {
+    setState('playing');
   };
+
   return {
     gameOver,
-    startGame,
-    gameState,
+    start,
+    state,
   };
 };

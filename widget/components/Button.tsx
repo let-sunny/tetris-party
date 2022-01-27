@@ -1,5 +1,5 @@
 import { BUTTON_EFFECT } from '../helper';
-import { Button as ButtonType } from '../type';
+import { Button as ButtonType } from '../../type';
 
 /* eslint-disable react/react-in-jsx-scope */
 const {

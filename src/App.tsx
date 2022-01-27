@@ -1,17 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { RecoilRoot } from 'recoil';
+
 import Game from './components/game/Game';
 
 function App() {
-  useEffect(() => {
-    if (typeof parent !== undefined) {
-      parent?.postMessage?.({ pluginMessage: 'hello' }, '*');
-    }
-  }, []);
-
   return (
-    <div className="app">
+    <RecoilRoot>
       <Game />
-    </div>
+    </RecoilRoot>
   );
 }
 

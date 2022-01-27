@@ -1,0 +1,30 @@
+.display {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 8px;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-bottom: 4px;
+}
+
+.name {
+  font-size: 0.5rem;
+}
+
+.score {
+  font-size: 0.6rem;
+  font-weight: bold;
+}

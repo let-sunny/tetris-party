@@ -2,13 +2,13 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import Cell from './Cell';
-import { Pieces } from '../../util/constants';
+import { PieceShapes } from '../../hooks/usePiece';
 
 export default {
   title: 'Components/Cell',
   component: Cell,
   argTypes: {
-    type: { control: { type: 'select', labels: Object.keys(Pieces) } },
+    type: { control: { type: 'select', labels: Object.keys(PieceShapes) } },
   },
 } as ComponentMeta<typeof Cell>;
 

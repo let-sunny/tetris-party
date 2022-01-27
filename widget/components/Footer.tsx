@@ -1,5 +1,5 @@
 import Button from './Button';
-import { Button as ButtonType } from '../type';
+import { Button as ButtonType } from '../../type';
 const {
   widget: { AutoLayout, Text },
 } = figma;

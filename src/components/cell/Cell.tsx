@@ -10,4 +10,4 @@ const Cell = ({ type }: Props) => {
   return <div className={`${classes.cell} ${classes[type]}`} />;
 };
 
-export default Cell;
+export default React.memo(Cell);

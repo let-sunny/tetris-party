@@ -3,8 +3,14 @@
     "jsx": "react",
     "jsxFactory": "figma.widget.h",
     "target": "es6",
-    "lib": ["es6"],
+    "skipLibCheck": true,
+    "lib": ["es6", "dom"],
     "strict": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "typeRoots": ["../node_modules/@figma"]
-  }
+  },
+  "exclude": ["../node_modules/*", "../src/**/*", "../.eslintrc.js"],
+  "include": ["../widget/**/*"]
 }
