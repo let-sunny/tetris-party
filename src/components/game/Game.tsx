@@ -13,7 +13,7 @@ import Display from '../display/Display';
 const Game = () => {
   const [player, setPlayer] = useRecoilState(playerState);
   const state = useRecoilValue(gameState);
-  const { ready, updatePlayer, gameOver, isFigma } = useGame();
+  const { ready, updatePlayer, gameOver } = useGame();
   const { grid, setBoard } = useBoard();
 
   useEffect(() => {

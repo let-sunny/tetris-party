@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { useSetRecoilState } from 'recoil';
+import { useSetRecoilState, useRecoilState } from 'recoil';
 import { playerState, gameState } from '../store/widget';
 
 import { Player, PluginMessage, PostMessage } from '../../type';
@@ -7,12 +7,11 @@ import { Player, PluginMessage, PostMessage } from '../../type';
 const useFigmaWidget = () => {
   const throttlingUpdatePlayer = useRef<NodeJS.Timeout | null>(null);
   const setPlayerState = useSetRecoilState(playerState);
-  const setGameState = useSetRecoilState(gameState);
+  const [game, setGame] = useRecoilState(gameState);
 
   useEffect(() => {
     onmessage = (e) => {
       if (!e.data.pluginMessage) return;
-
       const pluginMessage = e.data.pluginMessage as PluginMessage;
 
       switch (pluginMessage.type) {
@@ -20,7 +19,7 @@ const useFigmaWidget = () => {
           setPlayerState(pluginMessage.player);
           break;
         case 'START':
-          setGameState('playing');
+          if (game !== 'playing') setGame('playing');
           break;
         default:
           new Error('Unknown message type');

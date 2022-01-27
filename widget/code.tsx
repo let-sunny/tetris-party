@@ -6,7 +6,7 @@ import Avatars from './components/Avatars';
 import Footer from './components/Footer';
 
 const { widget, currentUser, ui } = figma;
-const { AutoLayout, useEffect, useSyncedState, useSyncedMap, waitForTask } =
+const { AutoLayout, useEffect, useSyncedMap, useSyncedState, waitForTask } =
   widget;
 
 function Widget() {
@@ -27,7 +27,6 @@ function Widget() {
             ...prevPlayer,
             state: 'ready',
           });
-          checkGameState();
           break;
         }
         case 'GAME_OVER': {
@@ -38,12 +37,31 @@ function Widget() {
             state: 'done',
           });
           setRank();
-          checkGameState();
         }
       }
     };
 
     ui.on('message', messageHandler);
+
+    figma.on('run', () => {
+      setInterval(() => {
+        checkGameState();
+      }, 3000);
+    });
+
+    figma.on('close', () => {
+      const currentPlayer = stages.get(`${currentUser!.id}`);
+      if (!currentPlayer) return;
+      if (gameState === 'playing' && currentPlayer.state !== 'done') {
+        // close after update
+        setRank();
+
+        stages.set(currentPlayer.id, {
+          ...currentPlayer,
+          state: 'done',
+        });
+      }
+    });
   });
 
   const sendUser = () => {
@@ -56,10 +74,10 @@ function Widget() {
 
   const sendGameStart = () => {
     // send game state to ui
-    ui.resize(210, 530);
     ui.postMessage({
       type: 'START',
     } as PluginMessage);
+    ui.resize(210, 530);
   };
 
   const setRank = () => {
@@ -75,19 +93,13 @@ function Widget() {
 
   const checkGameState = () => {
     // 1. all players are ready then start game
-    if (
-      gameState === 'idle' &&
-      getPlayers().every((player) => player.state === 'ready')
-    ) {
+    if (getPlayers().every((player) => player.state === 'ready')) {
       setGameState('playing');
       sendGameStart();
     }
 
     // 2. all players are game over then end game
-    if (
-      gameState == 'playing' &&
-      getPlayers().every((player) => player.state === 'done')
-    ) {
+    if (getPlayers().every((player) => player.state === 'done')) {
       setGameState('done');
     }
   };
@@ -97,10 +109,9 @@ function Widget() {
       new Promise((_resolve) => {
         figma.showUI(__html__);
         ui.resize(210, 120);
+        sendUser();
       })
     );
-
-    sendUser();
   };
 
   const getPlayers = () => {

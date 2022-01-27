@@ -1,7 +1,7 @@
+import { GameState } from '../../type';
 import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { playerState } from './../store/widget';
-import { GameOverHandler, GameState } from './useGame';
 import { Piece, usePiece, getRotatedShape, PieceType } from './usePiece';
 import { useTimer } from './useTimer';
 
@@ -11,7 +11,7 @@ export type CellState = {
 };
 type BoardController = {
   state: GameState;
-  gameOver: GameOverHandler;
+  gameOver: () => void;
 };
 
 export const useBoard = () => {

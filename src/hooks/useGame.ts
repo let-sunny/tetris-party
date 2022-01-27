@@ -1,20 +1,14 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { gameState, playerState } from '../store/widget';
 import { useFigmaWidget } from './useFigmaWidget';
 import { Player } from './../../type';
 
+const isFigma = process.env.BUILD_MODE !== 'DEMO';
 export const useGame = () => {
   const figmaWidget = useFigmaWidget();
   const setGameState = useSetRecoilState(gameState);
   const setPlayer = useSetRecoilState(playerState);
-  const [isFigma, setIsFigma] = useState(false);
-
-  useEffect(() => {
-    setIsFigma(
-      location !== parent.location && parent.location.hostname === 'figma.com'
-    );
-  }, []);
 
   useEffect(() => {
     if (!isFigma) {
