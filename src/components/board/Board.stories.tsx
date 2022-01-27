@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import Board from './Board';
-import { BOARD_HEIGHT, BOARD_WIDTH } from '../../util/constants';
+import { BOARD_HEIGHT, BOARD_WIDTH } from '../../hooks/useBoard';
 
 export default {
   title: 'Components/Board',
@@ -20,6 +20,7 @@ base.args = {
         .fill(0)
         .map(() => ({
           type: 'NONE',
+          fixed: false,
         }))
     ),
 };

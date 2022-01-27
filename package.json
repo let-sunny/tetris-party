@@ -9,7 +9,7 @@
     "format": "prettier --write .",
     "tsc": "npm run tsc:widget && npm run tsc:ui",
     "tsc:widget": "tsc --noEmit -p widget",
-    "tsc:ui": "tsc --noEmit -p rc",
+    "tsc:ui": "tsc --noEmit -p src",
     "tsc:watch": "concurrently -n widget,iframe \"npm run tsc:widget -- --watch --preserveWatchOutput\" \"npm run tsc:ui -- --watch --preserveWatchOutput\"",
     "build": "npm run build:ui && npm run build:widget",
     "build:production": "npm run build:ui && npm run build:widget -- --minify",
@@ -24,11 +24,12 @@
   "license": "MIT License",
   "dependencies": {
     "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react-dom": "^17.0.0",
+    "recoil": "^0.5.2"
   },
   "devDependencies": {
     "@babel/core": "^7.16.12",
-    "@figma/plugin-typings": "*",
+    "@figma/plugin-typings": "^1.41.1",
     "@figma/widget-typings": "*",
     "@storybook/addon-actions": "^6.4.14",
     "@storybook/addon-essentials": "^6.4.14",

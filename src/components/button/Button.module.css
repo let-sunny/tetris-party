@@ -1,14 +1,14 @@
 .button {
   display: inline-block;
   padding: 0.5em 1em;
-  background-color: var(--color-board);
-  border-color: var(--color-board);
-  border-radius: 0.2rem;
-  border-width: 0.2rem;
+  background-color: var(--color-O);
+  border-color: var(--color-O);
+  border-radius: 0.4rem;
+  border-width: 0.4rem;
   border-style: outset;
   color: #fff;
   text-decoration: none;
-  font-size: 0.5em;
+  font-size: 0.8em;
   font-weight: bold;
   cursor: pointer;
 }

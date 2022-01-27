@@ -1,6 +1,7 @@
 # Tetris Party
 
-**Tetris Party is a [Figma](https://figma.com/) widget**
+**Tetris Party is a [Figma](https://figma.com/) widget**  
+Here is a demo: [Play !](https://little-mighty-snickerdoodle.glitch.me/)
 
 ## Development
 

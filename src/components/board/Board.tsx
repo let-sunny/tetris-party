@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import classes from './Board.module.css';
 import Cell from '../cell/Cell';
 import { CellState } from '../../hooks/useBoard';
