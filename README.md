@@ -1,3 +1,9 @@
+<p align="center">
+  <img src="./public/cover.gif">
+  <br />
+  <br />
+</p>
+
 # Tetris Party
 
 **Tetris Party is a [Figma](https://figma.com/) widget**  
