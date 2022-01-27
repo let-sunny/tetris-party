@@ -1,3 +1,5 @@
+import React from 'react';
+import { RecoilRoot } from 'recoil';
 import '../src/index.css';
 
 export const parameters = {
@@ -9,3 +11,11 @@ export const parameters = {
     },
   },
 };
+
+export const decorators = [
+  (Story) => (
+    <RecoilRoot>
+      <Story />
+    </RecoilRoot>
+  ),
+];
