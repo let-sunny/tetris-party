@@ -4,7 +4,7 @@ import classes from './Game.module.css';
 
 import { playerState, gameState } from '../../store/widget';
 import { useBoard } from '../../hooks/useBoard';
-import { useFigmaWidget } from '../../hooks/useFigmaWidget';
+import { useGame } from '../../hooks/useGame';
 
 import Board from '../board/Board';
 import Button from '../button/Button';
@@ -13,9 +13,8 @@ import Display from '../display/Display';
 const Game = () => {
   const [player, setPlayer] = useRecoilState(playerState);
   const state = useRecoilValue(gameState);
-
+  const { ready, updatePlayer, gameOver, isFigma } = useGame();
   const { grid, setBoard } = useBoard();
-  const { ready, updatePlayer, gameOver } = useFigmaWidget();
 
   useEffect(() => {
     if (!player) return;

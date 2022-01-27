@@ -11,7 +11,9 @@ const useFigmaWidget = () => {
 
   useEffect(() => {
     onmessage = (e) => {
-      const pluginMessage = e.data?.pluginMessage as PluginMessage;
+      if (!e.data.pluginMessage) return;
+
+      const pluginMessage = e.data.pluginMessage as PluginMessage;
 
       switch (pluginMessage.type) {
         case 'SET_PLAYER':

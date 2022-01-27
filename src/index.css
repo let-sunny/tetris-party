@@ -12,6 +12,10 @@
 
   --board-width: 10;
   --board-height: 23;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 html,
