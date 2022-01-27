@@ -27,6 +27,7 @@ function Widget() {
             ...prevPlayer,
             state: 'ready',
           });
+          checkGameState();
           break;
         }
         case 'GAME_OVER': {
@@ -36,7 +37,9 @@ function Widget() {
             ...player,
             state: 'done',
           });
+
           setRank();
+          checkGameState();
         }
       }
     };
@@ -45,6 +48,7 @@ function Widget() {
 
     figma.on('run', () => {
       setInterval(() => {
+        // need to watch for changes in the game state
         checkGameState();
       }, 3000);
     });
@@ -54,12 +58,13 @@ function Widget() {
       if (!currentPlayer) return;
       if (gameState === 'playing' && currentPlayer.state !== 'done') {
         // close after update
-        setRank();
-
         stages.set(currentPlayer.id, {
           ...currentPlayer,
           state: 'done',
         });
+
+        setRank();
+        checkGameState();
       }
     });
   });
@@ -104,7 +109,13 @@ function Widget() {
     }
   };
 
-  const start = () => {
+  const join = () => {
+    if (stages.size > 3) {
+      figma.notify('Only 4 players can join');
+      return;
+    }
+    const player = buildPlayer(currentUser!);
+    stages.set(player.id, player);
     waitForTask(
       new Promise((_resolve) => {
         figma.showUI(__html__);
@@ -118,22 +129,15 @@ function Widget() {
     return stages.values();
   };
 
-  const join = async () => {
-    if (stages.size > 3) {
-      figma.notify('Only 4 players can join');
+  const leave = () => {
+    if (!getPlayers().some((player) => player.id === `${currentUser!.id}`)) {
+      figma.notify(`You've already leaved the game`);
       return;
     }
-    const player = buildPlayer(currentUser!);
-    stages.set(player.id, player);
-  };
 
-  const leave = () => {
     ui.close();
     stages.delete(`${currentUser!.id}`);
   };
-
-  const joined = () =>
-    getPlayers().some((player) => player.id === `${currentUser!.id}`);
 
   return (
     <AutoLayout
@@ -146,10 +150,9 @@ function Widget() {
 
       {/* if game state is idle then show control buttons */}
       {gameState === 'idle' &&
-        Footer(joined, {
+        Footer({
           join: { name: 'Join', handler: join },
           leave: { name: 'Leave', handler: leave },
-          play: { name: 'Play', handler: start },
         })}
     </AutoLayout>
   );

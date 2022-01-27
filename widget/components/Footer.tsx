@@ -5,10 +5,7 @@ const {
 } = figma;
 
 /* eslint-disable react/react-in-jsx-scope */
-const Footer = (
-  joined: () => boolean,
-  buttons: Record<'play' | 'join' | 'leave', ButtonType>
-) => (
+const Footer = (buttons: Record<'join' | 'leave', ButtonType>) => (
   <AutoLayout
     padding={10}
     width="fill-parent"
@@ -16,31 +13,27 @@ const Footer = (
     verticalAlignItems="center"
     spacing={10}
   >
-    {joined() ? (
+    <AutoLayout
+      direction="vertical"
+      horizontalAlignItems="center"
+      width="fill-parent"
+    >
+      {Button(buttons.join)}
       <AutoLayout
-        direction="vertical"
-        horizontalAlignItems="center"
+        height="hug-contents"
         width="fill-parent"
+        padding={10}
+        horizontalAlignItems="center"
       >
-        {Button(buttons.play)}
-        <AutoLayout
-          height="hug-contents"
-          width="fill-parent"
-          padding={10}
-          horizontalAlignItems="center"
+        <Text
+          fontSize={8}
+          textDecoration="underline"
+          onClick={buttons.leave.handler}
         >
-          <Text
-            fontSize={8}
-            textDecoration="underline"
-            onClick={buttons.leave.handler}
-          >
-            {buttons.leave.name}
-          </Text>
-        </AutoLayout>
+          {buttons.leave.name}
+        </Text>
       </AutoLayout>
-    ) : (
-      Button(buttons.join)
-    )}
+    </AutoLayout>
   </AutoLayout>
 );
 
