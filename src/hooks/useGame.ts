@@ -16,12 +16,12 @@ export const useGame = () => {
     }
   }, [isFigma]);
 
-  const ready = useMemo(() => {
+  const ready: typeof figmaWidget.ready = useMemo(() => {
     if (isFigma) return figmaWidget.ready;
     return () => setGameState('playing');
   }, [isFigma]);
 
-  const gameOver = useMemo(() => {
+  const gameOver: typeof figmaWidget.gameOver = useMemo(() => {
     if (isFigma) return figmaWidget.gameOver;
     return () => {
       setGameState('idle');
@@ -29,7 +29,7 @@ export const useGame = () => {
     };
   }, [isFigma]);
 
-  const updatePlayer = useMemo(() => {
+  const updatePlayer: typeof figmaWidget.updatePlayer = useMemo(() => {
     if (isFigma) return figmaWidget.updatePlayer;
     return () => {
       // do nothing
@@ -40,7 +40,6 @@ export const useGame = () => {
     ready,
     updatePlayer,
     gameOver,
-    isFigma,
   };
 };
 

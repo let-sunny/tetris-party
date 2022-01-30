@@ -14,7 +14,7 @@ const Game = () => {
   const [player, setPlayer] = useRecoilState(playerState);
   const state = useRecoilValue(gameState);
   const { ready, updatePlayer, gameOver } = useGame();
-  const { grid, setBoard } = useBoard();
+  const { board } = useBoard();
 
   useEffect(() => {
     if (!player) return;
@@ -22,17 +22,13 @@ const Game = () => {
   }, [player]);
 
   useEffect(() => {
-    if (state !== 'playing') return;
-    setBoard({
-      state,
-      gameOver: () => {
-        gameOver(player!.id);
-      },
-    });
+    if (state === 'done' && player) {
+      gameOver(player.id);
+    }
   }, [state]);
 
   const screen = useMemo(() => {
-    if (state === 'playing') return <Board grid={grid} />;
+    if (state === 'playing') return <Board grid={board} />;
 
     return (
       <section className={classes.content}>
@@ -52,7 +48,7 @@ const Game = () => {
         )}
       </section>
     );
-  }, [state, player, grid]);
+  }, [state, player, board]);
 
   return (
     <div className={classes.game}>

@@ -1,0 +1,1907 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/Board Base 1`] = `
+<div
+  className="board"
+>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+  <div
+    className="cellContainer"
+  >
+    <div
+      className="cell NONE"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Button Base 1`] = `
+<button
+  className="button"
+  name="START"
+  type="button"
+>
+  START
+</button>
+`;
+
+exports[`Storyshots Components/Cell Base 1`] = `
+<div
+  style={
+    Object {
+      "height": "1rem",
+      "width": "1rem",
+    }
+  }
+>
+  <div
+    className="cell T"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/Display Base 1`] = `null`;
+
+exports[`Storyshots Components/Piece I 1`] = `
+<div
+  className="piece I"
+  data-colum={4}
+>
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell I"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell I"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell I"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell I"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/Piece J 1`] = `
+<div
+  className="piece J"
+  data-colum={3}
+>
+  <div
+    className="cell J"
+  />
+  <div
+    className="cell J"
+  />
+  <div
+    className="cell J"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell J"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/Piece L 1`] = `
+<div
+  className="piece L"
+  data-colum={3}
+>
+  <div
+    className="cell L"
+  />
+  <div
+    className="cell L"
+  />
+  <div
+    className="cell L"
+  />
+  <div
+    className="cell L"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/Piece NONE 1`] = `
+<div
+  className="piece NONE"
+  data-colum={1}
+>
+  <div
+    className="cell NONE"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/Piece O 1`] = `
+<div
+  className="piece O"
+  data-colum={2}
+>
+  <div
+    className="cell O"
+  />
+  <div
+    className="cell O"
+  />
+  <div
+    className="cell O"
+  />
+  <div
+    className="cell O"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/Piece S 1`] = `
+<div
+  className="piece S"
+  data-colum={3}
+>
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell S"
+  />
+  <div
+    className="cell S"
+  />
+  <div
+    className="cell S"
+  />
+  <div
+    className="cell S"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/Piece T 1`] = `
+<div
+  className="piece T"
+  data-colum={3}
+>
+  <div
+    className="cell T"
+  />
+  <div
+    className="cell T"
+  />
+  <div
+    className="cell T"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell T"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/Piece Z 1`] = `
+<div
+  className="piece Z"
+  data-colum={3}
+>
+  <div
+    className="cell Z"
+  />
+  <div
+    className="cell Z"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell Z"
+  />
+  <div
+    className="cell Z"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+  <div
+    className="cell NONE"
+  />
+</div>
+`;

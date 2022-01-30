@@ -1,9 +1,17 @@
 import type { Config } from '@jest/types';
 
 const config: Config.InitialOptions = {
+  globals: {
+    'ts-jest': {
+      diagnostics: true,
+      tsconfig: '<rootDir>/src/tsconfig.json',
+    },
+  },
+  moduleDirectories: ['node_modules', 'src'],
+
   // A list of paths to directories that Jest should use to search for files in
   // https://jestjs.io/docs/configuration#roots-arraystring
-  roots: ['<rootDir>/src/', '<rootDir>/widget/'],
+  roots: ['<rootDir>/src'],
 
   // The test environment that will be used for testing, jsdom for browser environment
   // https://jestjs.io/docs/configuration#testenvironment-string
@@ -13,6 +21,7 @@ const config: Config.InitialOptions = {
   // https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object
   transform: {
     '^.+\\.tsx?$': 'ts-jest', // Transform TypeScript files using ts-jest
+    '^.+\\.(js|jsx)$': 'babel-jest',
   },
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test file in the suite is executed
@@ -22,8 +31,9 @@ const config: Config.InitialOptions = {
   // Important: order matters, specific rules should be defined first
   // https://jestjs.io/fr/docs/configuration#modulenamemapper-objectstring-string--arraystring
   moduleNameMapper: {
-    // Handle CSS imports (without CSS modules)
-    '^.+\\.(css|sass|scss|less)$': '<rootDir>/__mocks__/styleMock.js',
+    // CSS modules
+    // https://jestjs.io/docs/webpack#mocking-css-modules
+    '\\.(css)$': 'identity-obj-proxy',
 
     // Handle static assets
     // https://jestjs.io/docs/webpack#handling-static-assets

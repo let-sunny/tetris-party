@@ -15,9 +15,15 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
-    "types": ["vite/client", "node", "jest", "@testing-library/jest-dom"],
+    "types": [
+      "vite/client",
+      "node",
+      "jest",
+      "@testing-library/jest-dom",
+      "@testing-library/react-hooks"
+    ],
     "typeRoots": ["../node_modules/@types"]
   },
   "exclude": ["../node_modules/*", "../widget/**/*", "../.eslintrc.js"],
-  "include": ["../src/**/*"]
+  "include": ["../src/**/*", "**/*.test.ts"]
 }
