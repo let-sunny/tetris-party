@@ -21,6 +21,9 @@ npm install
 
 # start
 npm run dev
+
+# test
+npm run test:unit
 ```
 
 ## Used tools
