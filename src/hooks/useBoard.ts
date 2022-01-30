@@ -1,7 +1,8 @@
-import { GameState } from '../../type';
 import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
-import { playerState } from './../store/widget';
+
+import { playerState, gameState } from './../store/widget';
+
 import { Piece, usePiece, getRotatedShape, PieceType } from './usePiece';
 import { useTimer } from './useTimer';
 
@@ -9,44 +10,36 @@ export type CellState = {
   type: PieceType;
   fixed: boolean;
 };
-type BoardController = {
-  state: GameState;
-  gameOver: () => void;
-};
 
 export const useBoard = () => {
+  // global state
   const [player, setPlayer] = useRecoilState(playerState);
-  const [grid, setGrid] = useState(getInitialGrid(BOARD_WIDTH, BOARD_HEIGHT));
-  const [score, setScore] = useState(0);
-  const [boardController, setBoardController] =
-    useState<BoardController | null>(null);
-  const [delay, setDelay] = useState(500);
+  const [state, setState] = useRecoilState(gameState); // for all players
+  // custom hook
   const timer = useTimer();
-  const {
-    generatePiece,
-    updatePosition,
-    rotate,
-    piece: currentPiece,
-    fix,
-  } = usePiece();
+  const { generatePiece, updatePosition, rotate, piece, fix } = usePiece();
+  // local state
+  const [delay, setDelay] = useState(550);
+  const [score, setScore] = useState(0);
+  const [board, setBoard] = useState(getInitialGrid(BOARD_WIDTH, BOARD_HEIGHT));
 
   useEffect(() => {
-    if (boardController?.state === 'playing') {
+    if (state === 'playing') {
       timer.start(delay, () => {
         if (player) {
           setPlayer({
             ...player,
             score,
-            // board: grid, TODO: screen share
+            // board, TODO: screen share
           });
         }
 
         const toDown = { x: 0, y: 1 };
-        if (!isCollusion(grid, currentPiece, toDown)) {
+        if (!isCollusion(board, piece, toDown)) {
           updatePosition(toDown);
-        } else if (isCollusion(grid, currentPiece, { x: 0, y: 0 })) {
+        } else if (isCollusion(board, piece, { x: 0, y: 0 })) {
           timer.stop();
-          boardController!.gameOver();
+          setState('done');
         } else {
           fix();
         }
@@ -56,11 +49,11 @@ export const useBoard = () => {
     return () => {
       timer.stop();
     };
-  }, [currentPiece, boardController?.state, boardController?.gameOver, delay]);
+  }, [piece, state, delay]);
 
   useEffect(() => {
-    setGrid((prev) => {
-      const newGrid = prev.map((row) => {
+    setBoard((prev) => {
+      const newBoard = prev.map((row) => {
         return row.map((cell) => {
           if (cell.fixed) return cell;
           return createDefaultCellState();
@@ -71,13 +64,13 @@ export const useBoard = () => {
         shape,
         position: { x, y },
         fixed,
-      } = currentPiece;
+      } = piece;
 
       shape.forEach((row, yIndex) => {
         row.forEach((cell, xIndex) => {
           if (cell) {
-            newGrid[y + yIndex][x + xIndex] = {
-              type: currentPiece.type,
+            newBoard[y + yIndex][x + xIndex] = {
+              type: piece.type,
               fixed,
             };
           }
@@ -87,7 +80,7 @@ export const useBoard = () => {
       if (fixed) {
         generatePiece();
 
-        const [removed, score] = removeRow(newGrid);
+        const [removed, score] = removeRow(newBoard);
         if (score) {
           setScore((prev) => prev + score);
           if (delay > 200) {
@@ -97,40 +90,40 @@ export const useBoard = () => {
         return removed;
       }
 
-      return newGrid;
+      return newBoard;
     });
-  }, [currentPiece]);
+  }, [piece]);
 
   // keydown event handler
   useEffect(() => {
-    if (boardController?.state !== 'playing') return;
+    if (state !== 'playing') return;
     const keyHandler = (e: KeyboardEvent) => {
       e.preventDefault();
       switch (e.code) {
         case 'ArrowLeft': {
           const toLeft = { x: -1, y: 1 };
-          if (!isCollusion(grid, currentPiece, toLeft)) updatePosition(toLeft);
+          if (!isCollusion(board, piece, toLeft)) updatePosition(toLeft);
           break;
         }
         case 'ArrowRight': {
           const toRight = { x: 1, y: 0 };
-          if (!isCollusion(grid, currentPiece, { x: 1, y: 0 }))
+          if (!isCollusion(board, piece, { x: 1, y: 0 }))
             updatePosition(toRight);
           break;
         }
         case 'ArrowDown': {
           const toDown = { x: 0, y: 1 };
-          if (!isCollusion(grid, currentPiece, toDown)) updatePosition(toDown);
+          if (!isCollusion(board, piece, toDown)) updatePosition(toDown);
           break;
         }
         case 'ArrowUp': {
-          const rotatedShape = getRotatedShape(currentPiece.shape);
-          let rotatedPiece = { ...currentPiece, shape: rotatedShape };
-          const width = currentPiece.shape[0].length;
-          const left = currentPiece.position.x;
+          const rotatedShape = getRotatedShape(piece.shape);
+          let rotatedPiece = { ...piece, shape: rotatedShape };
+          const width = piece.shape[0].length;
+          const left = piece.position.x;
           const right = left + width - 1;
 
-          while (isCollusion(grid, rotatedPiece, { x: 0, y: 0 })) {
+          while (isCollusion(board, rotatedPiece, { x: 0, y: 0 })) {
             if (right < BOARD_WIDTH - 1) {
               // reach the right edge
               rotatedPiece = {
@@ -161,18 +154,18 @@ export const useBoard = () => {
           }
 
           rotate({
-            x: rotatedPiece.position.x - currentPiece.position.x,
+            x: rotatedPiece.position.x - piece.position.x,
             y: 0,
           });
           break;
         }
         case 'Space': {
           let y = 0;
-          while (!isCollusion(grid, currentPiece, { x: 0, y })) {
+          while (!isCollusion(board, piece, { x: 0, y })) {
             y += 1;
           }
           const toBottom = { x: 0, y: y - 1 };
-          if (!isCollusion(grid, currentPiece, toBottom)) {
+          if (!isCollusion(board, piece, toBottom)) {
             updatePosition(toBottom);
           }
           break;
@@ -194,16 +187,10 @@ export const useBoard = () => {
     return () => {
       document.removeEventListener('keydown', throttlingKeyboardHandler);
     };
-  }, [currentPiece, boardController?.state]);
-
-  const setBoard = (boardController: BoardController) => {
-    setGrid(getInitialGrid(BOARD_WIDTH, BOARD_HEIGHT));
-    setBoardController(boardController);
-  };
+  }, [piece, state]);
 
   return {
-    grid,
-    setBoard,
+    board,
   };
 };
 
@@ -219,7 +206,7 @@ const getInitialGrid = (width: number, height: number) =>
     .map(() => Array(width).fill(0).map(createDefaultCellState));
 
 const isCollusion = (
-  grid: CellState[][],
+  board: CellState[][],
   piece: Piece,
   move: { x: number; y: number }
 ) => {
@@ -234,13 +221,13 @@ const isCollusion = (
     for (let xIndex = 0; xIndex < shape[yIndex].length; xIndex++) {
       const cell = shape[yIndex][xIndex];
       if (cell) {
-        if (!grid[dy + yIndex] || !grid[dy + yIndex][dx + xIndex]) {
+        if (!board[dy + yIndex] || !board[dy + yIndex][dx + xIndex]) {
           // reach the edge
           return true;
         }
         if (
-          grid[dy + yIndex][dx + xIndex].type !== 'NONE' &&
-          grid[dy + yIndex][dx + xIndex].fixed
+          board[dy + yIndex][dx + xIndex].type !== 'NONE' &&
+          board[dy + yIndex][dx + xIndex].fixed
         ) {
           // touch the other piece
           return true;
@@ -252,16 +239,16 @@ const isCollusion = (
   return false;
 };
 
-const removeRow = (grid: CellState[][]): [CellState[][], number] => {
+const removeRow = (board: CellState[][]): [CellState[][], number] => {
   let count = 0;
-  grid.forEach((row, yIndex) => {
+  board.forEach((row, yIndex) => {
     if (row.every((cell) => cell.type !== 'NONE')) {
-      grid.splice(yIndex, 1);
-      grid.unshift(Array(BOARD_WIDTH).fill(0).map(createDefaultCellState));
+      board.splice(yIndex, 1);
+      board.unshift(Array(BOARD_WIDTH).fill(0).map(createDefaultCellState));
       count += 1;
     }
   });
-  return [grid, getScore(count)];
+  return [board, getScore(count)];
 };
 
 const getScore = (removedRowCount: number) => {

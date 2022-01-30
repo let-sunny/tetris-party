@@ -10,7 +10,7 @@ const useFigmaWidget = () => {
   const [game, setGame] = useRecoilState(gameState);
 
   useEffect(() => {
-    onmessage = (e) => {
+    window.addEventListener('message', (e) => {
       if (!e.data.pluginMessage) return;
       const pluginMessage = e.data.pluginMessage as PluginMessage;
 
@@ -24,7 +24,7 @@ const useFigmaWidget = () => {
         default:
           new Error('Unknown message type');
       }
-    };
+    });
   }, []);
 
   const updatePlayer = (player: Player) => {

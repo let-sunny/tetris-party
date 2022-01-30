@@ -1,11 +1,12 @@
 {
-  "name": "Tetris Party",
+  "name": "tetris-party",
   "version": "1.0.0",
   "description": "Tetris Party is a figma widget that allows you to play Tetris with other people.",
   "scripts": {
     "test": "npm run tsc && npm run build",
     "test:unit:watch": "jest --watch",
-    "test:unit": "jest",
+    "test:snapshot": "jest --updateSnapshot",
+    "test:unit": "jest --maxWorkers=1",
     "format": "prettier --write .",
     "tsc": "npm run tsc:widget && npm run tsc:ui",
     "tsc:widget": "tsc --noEmit -p widget",
@@ -29,6 +30,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.12",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
     "@figma/plugin-typings": "^1.41.1",
     "@figma/widget-typings": "*",
     "@storybook/addon-actions": "^6.4.14",
@@ -52,6 +55,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.7",
     "prettier": "^2.3.2",
     "react-test-renderer": "^17.0.2",

@@ -1,4 +1,5 @@
 import React from 'react';
+import { addDecorator } from '@storybook/react';
 import { RecoilRoot } from 'recoil';
 import '../src/index.css';
 
@@ -12,10 +13,8 @@ export const parameters = {
   },
 };
 
-export const decorators = [
-  (Story) => (
-    <RecoilRoot>
-      <Story />
-    </RecoilRoot>
-  ),
-];
+addDecorator((Story) => (
+  <RecoilRoot>
+    <Story />
+  </RecoilRoot>
+));

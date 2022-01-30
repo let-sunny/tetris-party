@@ -69,6 +69,7 @@ export const getRotatedShape = (shape: number[][]) => {
   return shape.map((_, i) => shape.map((row) => row[i]).reverse());
 };
 
+// TODO: rotation 미리 만들어두기
 export const PieceShapes = {
   NONE: [[0]],
   T: [
