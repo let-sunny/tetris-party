@@ -1,12 +1,13 @@
 <p align="center">
-  <img src="./public/cover.gif">
+  <img src="./src/public/cover.gif">
   <br />
   <br />
 </p>
 
 # Tetris Party
 
-**Tetris Party is a [Figma](https://figma.com/) widget**  
+**[Tetris Party](https://www.figma.com/community/widget/1067458900580099402/Tetris-Party) is a [Figma](https://figma.com/) widget**
+
 Here is a demo: [Play !](https://little-mighty-snickerdoodle.glitch.me/)
 
 ## Development
