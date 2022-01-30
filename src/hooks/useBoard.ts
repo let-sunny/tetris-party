@@ -87,17 +87,12 @@ export const useBoard = () => {
       if (fixed) {
         generatePiece();
 
-        if (delay > 100) {
-          setDelay((prev) => {
-            if (prev > 400) return prev - 10;
-            if (prev > 120) return prev - 15;
-            return prev;
-          });
-        }
-
         const [removed, score] = removeRow(newGrid);
         if (score) {
           setScore((prev) => prev + score);
+          if (delay > 200) {
+            setDelay(Math.floor(delay * 0.95));
+          }
         }
         return removed;
       }
