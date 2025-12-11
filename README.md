@@ -8,7 +8,7 @@
 
 **[Tetris Party](https://www.figma.com/community/widget/1067458900580099402/Tetris-Party) is a [Figma](https://figma.com/) widget**
 
-Here is a demo: [Play !](https://little-mighty-snickerdoodle.glitch.me/)
+Here is a demo: [Play !](https://let-sunny.github.io/tetris-party/)
 
 
 ## Architecture
