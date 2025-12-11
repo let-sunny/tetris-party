@@ -10,6 +10,12 @@
 
 Here is a demo: [Play !](https://little-mighty-snickerdoodle.glitch.me/)
 
+
+## Architecture
+
+- [Architecture (English)](./ARCHITECTURE.md)
+- [아키텍처 설명 (한국어)](./ARCHITECTURE_ko.md)
+
 ## Development
 
 ```bash
